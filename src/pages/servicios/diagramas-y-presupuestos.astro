@@ -11,6 +11,25 @@ import Footer from '../../components/Footer.astro';
 	<Header />
 	
 	<main class="service-detail-page">
+		<script type="application/ld+json" set:html={JSON.stringify([
+			{
+				"@context": "https://schema.org",
+				"@type": "BreadcrumbList",
+				"itemListElement": [
+					{ "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://electrion-servicios-online.com/" },
+					{ "@type": "ListItem", "position": 2, "name": "Servicios", "item": "https://electrion-servicios-online.com/servicios" },
+					{ "@type": "ListItem", "position": 3, "name": "Diagramas y Presupuestos", "item": "https://electrion-servicios-online.com/servicios/diagramas-y-presupuestos" }
+				]
+			},
+			{
+				"@context": "https://schema.org",
+				"@type": "Service",
+				"name": "Diagramas Unifilares y Presupuestos",
+				"provider": { "@type": "LocalBusiness", "name": "Electrion Servicios Online" },
+				"description": "Elaboración de diagramas unifilares y tabuladores precisos para optimizar costos de proyectos eléctricos.",
+				"areaServed": "PE"
+			}
+		])} />
 		<article class="container">
 			<header class="service-header text-center">
 				<div class="service-icon">📊</div>

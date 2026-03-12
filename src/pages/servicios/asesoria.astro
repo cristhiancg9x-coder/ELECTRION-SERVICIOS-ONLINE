@@ -11,6 +11,25 @@ import Footer from '../../components/Footer.astro';
 	<Header />
 	
 	<main class="service-detail-page">
+		<script type="application/ld+json" set:html={JSON.stringify([
+			{
+				"@context": "https://schema.org",
+				"@type": "BreadcrumbList",
+				"itemListElement": [
+					{ "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://electrion-servicios-online.com/" },
+					{ "@type": "ListItem", "position": 2, "name": "Servicios", "item": "https://electrion-servicios-online.com/servicios" },
+					{ "@type": "ListItem", "position": 3, "name": "Asesoría Técnica", "item": "https://electrion-servicios-online.com/servicios/asesoria" }
+				]
+			},
+			{
+				"@context": "https://schema.org",
+				"@type": "Service",
+				"name": "Asesoría Técnica Especializada",
+				"provider": { "@type": "LocalBusiness", "name": "Electrion Servicios Online" },
+				"description": "Consultoría y asesoría en proyectos eléctricos para mejorar eficiencia y resolver problemas técnicos.",
+				"areaServed": "PE"
+			}
+		])} />
 		<article class="container">
 			<header class="service-header text-center">
 				<div class="service-icon">💡</div>
