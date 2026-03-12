@@ -11,7 +11,7 @@ export interface Props {
 const { title, description, image = '/default-og.png' } = Astro.props;
 const siteData = {
 	siteName: "Electrion Servicios Online",
-	url: Astro.site || Astro.url?.origin || "https://electrion-servicios-online.com",
+	url: Astro.site || Astro.url?.origin || "https://electrion-servicios-online.netlify.app",
 };
 ---
 
@@ -59,7 +59,7 @@ const siteData = {
 				"@context": "https://schema.org",
 				"@type": "ProfessionalService",
 				"name": siteData.siteName,
-				"image": new URL(image, Astro.site || siteData.url).toString(),
+				"image": new URL(image, Astro.url || "https://electrion-servicios-online.netlify.app").toString(),
 				"url": siteData.url,
 				"telephone": "+51951413458",
 				"priceRange": "$$",

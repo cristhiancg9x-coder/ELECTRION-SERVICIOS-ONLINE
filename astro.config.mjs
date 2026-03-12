@@ -5,6 +5,6 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://electrion-servicios-online.com',
+  site: 'https://electrion-servicios-online.netlify.app',
   integrations: [sitemap()]
 });

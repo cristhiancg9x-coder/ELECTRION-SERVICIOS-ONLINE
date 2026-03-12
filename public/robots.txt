@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://electrion-servicios-online.com/sitemap-index.xml
+Sitemap: https://electrion-servicios-online.netlify.app/sitemap-index.xml
