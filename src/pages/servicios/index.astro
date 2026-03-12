@@ -1,0 +1,149 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+
+const services = [
+	{
+		title: "Planos Eléctricos",
+		description: "Diseño y cálculo de planos eléctricos residenciales, comerciales e industriales garantizando cumplimiento normativo y seguridad.",
+		icon: "📋",
+		href: "/servicios/planos-electricos"
+	},
+	{
+		title: "Diagramas y Presupuestos",
+		description: "Elaboración de diagramas unifilares, de control, y presupuestos detallados para la correcta ejecución de obras eléctricas.",
+		icon: "📊",
+		href: "/servicios/diagramas-y-presupuestos"
+	},
+	{
+		title: "Asesoría Técnica Especializada",
+		description: "Consultoría experta para resolver problemas complejos, optimización energética y revisión de proyectos eléctricos existentes.",
+		icon: "💡",
+		href: "/servicios/asesoria"
+	},
+	{
+		title: "Electrónica y Mecatrónica",
+		description: "Soluciones de automatización, diseño de PCBs e integración de sistemas mecatrónicos. (Próximamente)",
+		icon: "🤖",
+		href: "#"
+	}
+];
+---
+
+<BaseLayout
+	title="Catálogo de Servicios Eléctricos"
+	description="Explora todos los servicios profesionales que ofrece Electrion: Planos eléctricos, diagramas, presupuestos y asesoría técnica de primer nivel."
+>
+	<Header />
+	
+	<main class="page-main">
+		<section class="page-header relative text-center">
+			<div class="container">
+				<h1 class="page-title">Nuestros <span class="text-gradient">Servicios</span></h1>
+				<p class="page-description">Soluciones profesionales en electricidad, diseñadas a la medida de tus necesidades de seguridad e innovación.</p>
+			</div>
+		</section>
+
+		<section class="services-list-section">
+			<div class="container">
+				<div class="services-grid">
+					{services.map(service => (
+						<ServiceCard 
+							title={service.title}
+							description={service.description}
+							icon={service.icon}
+							href={service.href}
+						/>
+					))}
+				</div>
+			</div>
+		</section>
+
+		<section class="cta-section text-center">
+			<div class="container">
+				<div class="glass-panel cta-panel">
+					<h2>¿Necesitas un servicio a la medida?</h2>
+					<p>Contáctanos para evaluar tu proyecto y ofrecerte la mejor solución costo-beneficio del mercado.</p>
+					<a href="/contacto" class="btn btn-primary mt-12">Contactar Ahora</a>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<Footer />
+</BaseLayout>
+
+<style lang="scss">
+	.page-main {
+		padding-top: 80px; /* Header offset */
+	}
+
+	.page-header {
+		padding: 6rem 0 3rem;
+		
+		/* Removed radial gradient background */
+	}
+
+	.page-title {
+		font-size: 4rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.page-description {
+		font-size: 1.25rem;
+		color: var(--text-secondary);
+		max-width: 700px;
+		margin: 0 auto;
+		line-height: 1.6;
+	}
+
+	.services-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+		gap: 2.5rem;
+		padding: 2rem 0;
+	}
+
+	.cta-section {
+		padding: 6rem 0;
+	}
+
+	.cta-panel {
+		padding: 5rem 2rem;
+		max-width: 800px;
+		margin: 0 auto;
+		
+		h2 {
+			font-size: 2.5rem;
+			margin-bottom: 1.5rem;
+			color: var(--text-primary);
+		}
+		
+		p {
+			font-size: 1.125rem;
+			color: var(--text-secondary);
+			margin-bottom: 2rem;
+		}
+	}
+	
+	.text-center {
+		text-align: center;
+	}
+
+	@media (max-width: 768px) {
+		.page-title {
+			font-size: 2.5rem;
+		}
+		.cta-panel {
+			padding: 3rem 1.5rem;
+			h2 {
+				font-size: 2rem;
+			}
+		}
+		.services-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

@@ -1,0 +1,163 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<BaseLayout
+	title="Planos Eléctricos Profesionales"
+	description="Servicio de diseño y cálculo de planos eléctricos residenciales, comerciales e industriales en AutoCAD. Asegura tu proyecto con Electrion."
+>
+	<Header />
+	
+	<main class="service-detail-page">
+		<article class="container">
+			<header class="service-header text-center">
+				<div class="service-icon">📋</div>
+				<h1 class="page-title">Diseño de <span class="text-gradient">Planos Eléctricos</span></h1>
+				<p class="service-lead">Precisión, cumplimiento normativo y seguridad para cualquier tipo de instalación.</p>
+			</header>
+
+			<div class="service-content glass-panel">
+				<div class="content-grid">
+					<div>
+						<h2>La base de un proyecto seguro</h2>
+						<p>Un plano eléctrico bien estructurado es fundamental para evitar sobrecostos, fallas futuras y accidentes. En <strong>Electrion Servicios Online</strong> realizamos cálculos exactos para dimensionar correctamente conductores, protecciones y canalizaciones.</p>
+						
+						<h3>¿Qué entregamos?</h3>
+						<ul>
+							<li>✓ Planos en formato digital (.DWG y .PDF) listos para impresión.</li>
+							<li>✓ Cuadro de cargas detallado y balanceo de fases.</li>
+							<li>✓ Especificación técnica de materiales y equipos.</li>
+							<li>✓ Diagrama unifilar de la instalación.</li>
+						</ul>
+					</div>
+					<div class="image-placeholder">
+						<!-- Placeholder for a real image, using CSS gradient for now -->
+						<div class="blueprint-mockup">
+							<div class="lines"></div>
+						</div>
+					</div>
+				</div>
+
+				<div class="service-cta text-center mt-12">
+					<h3>¿Listo para arrancar tu proyecto?</h3>
+					<a href="/contacto?servicio=planos" class="btn btn-primary mt-4">Solicitar Cotización</a>
+				</div>
+			</div>
+		</article>
+	</main>
+
+	<Footer />
+</BaseLayout>
+
+<style lang="scss">
+	.service-detail-page {
+		padding-top: 120px;
+		padding-bottom: 6rem;
+	}
+
+	.service-header {
+		margin-bottom: 4rem;
+	}
+
+	.service-icon {
+		font-size: 5rem;
+		margin-bottom: 1rem;
+		color: var(--primary-color);
+	}
+
+	.page-title {
+		font-size: 3.5rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.service-lead {
+		font-size: 1.25rem;
+		color: var(--text-secondary);
+		max-width: 600px;
+		margin: 0 auto;
+	}
+
+	.service-content {
+		padding: 4rem;
+		
+		h2 {
+			font-size: 2rem;
+			color: var(--primary-color);
+			margin-bottom: 1.5rem;
+		}
+		
+		h3 {
+			font-size: 1.5rem;
+			margin-top: 2.5rem;
+			margin-bottom: 1rem;
+		}
+		
+		p {
+			margin-bottom: 1.5rem;
+			font-size: 1.1rem;
+			color: var(--text-secondary);
+		}
+		
+		ul {
+			list-style: none;
+			li {
+				margin-bottom: 1rem;
+				font-size: 1.1rem;
+				color: var(--text-primary);
+				padding-left: 1.5rem;
+				position: relative;
+			}
+		}
+	}
+
+	.content-grid {
+		display: grid;
+		grid-template-columns: 1.5fr 1fr;
+		gap: 4rem;
+		align-items: center;
+	}
+
+	.blueprint-mockup {
+		width: 100%;
+		height: 350px;
+		background: #0f2c4d; /* Blueprint blue */
+		border-radius: 8px;
+		position: relative;
+		overflow: hidden;
+		border: 1px solid var(--border-color);
+		
+		/* Grid lines representing blueprint */
+		background-image: 
+			linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+			linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+		background-size: 20px 20px;
+	}
+
+	.service-cta {
+		border-top: 1px solid var(--border-color);
+		padding-top: 3rem;
+		margin-top: 4rem;
+		
+		h3 {
+			font-size: 1.75rem;
+		}
+	}
+	
+	.text-center { text-align: center; }
+	.mt-4 { margin-top: 1rem; }
+	.mt-12 { margin-top: 3rem; }
+
+	@media (max-width: 900px) {
+		.content-grid {
+			grid-template-columns: 1fr;
+		}
+		.service-content {
+			padding: 2.5rem 1.5rem;
+		}
+		.page-title {
+			font-size: 2.5rem;
+		}
+	}
+</style>

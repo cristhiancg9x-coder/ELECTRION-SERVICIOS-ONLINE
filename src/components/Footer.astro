@@ -1,0 +1,109 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="container footer-content">
+    <div class="footer-brand">
+      <a href="/" class="logo text-gradient">
+        <span class="logo-icon">⚡</span> Electrion
+      </a>
+      <p>Expertos en soluciones eléctricas residenciales, comerciales e industriales. Planos, diagramas y presupuestos precisos.</p>
+    </div>
+    
+    <div class="footer-links">
+      <h3>Servicios</h3>
+      <ul>
+        <li><a href="/servicios/planos-electricos">Planos Eléctricos</a></li>
+        <li><a href="/servicios/diagramas-y-presupuestos">Diagramas y Presupuestos</a></li>
+        <li><a href="/servicios/asesoria">Asesoría Técnica</a></li>
+      </ul>
+    </div>
+    
+    <div class="footer-links">
+      <h3>Empresa</h3>
+      <ul>
+        <li><a href="/nosotros">Nosotros</a></li>
+        <li><a href="/contacto">Contacto</a></li>
+        <li><a href="/aviso-de-privacidad">Aviso de Privacidad</a></li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="footer-bottom">
+    <div class="container">
+      <p>&copy; {currentYear} Electrion Servicios Online. Todos los derechos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<style lang="scss">
+  .footer {
+    background-color: var(--bg-secondary);
+    border-top: 1px solid var(--border-color);
+    padding-top: 4rem;
+    margin-top: 4rem;
+  }
+  
+  .footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+  }
+  
+  .footer-brand {
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    p {
+      color: var(--text-secondary);
+      max-width: 400px;
+    }
+  }
+  
+  .footer-links {
+    h3 {
+      font-size: 1.25rem;
+      margin-bottom: 1.5rem;
+      color: var(--text-primary);
+    }
+    
+    ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      
+      a {
+        color: var(--text-secondary);
+        transition: var(--transition);
+        
+        &:hover {
+          color: var(--primary-color);
+        }
+      }
+    }
+  }
+  
+  .footer-bottom {
+    border-top: 1px solid var(--border-color);
+    padding: 1.5rem 0;
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+  }
+
+  @media (max-width: 768px) {
+    .footer-content {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+</style>

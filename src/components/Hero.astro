@@ -1,0 +1,115 @@
+---
+---
+
+<section class="hero relative">
+  <div class="hero-bg"></div>
+  <div class="container hero-container relative">
+    <div class="hero-content text-center">
+      <div class="badge glass-panel">⚡ Especialistas en Proyectos Eléctricos</div>
+      <h1 class="hero-title">
+        Potencia tu Proyecto con <br/>
+        <span class="text-gradient">Innovación Eléctrica</span>
+      </h1>
+      <p class="hero-subtitle">
+        Diseño de planos, diagramas de control, presupuestos y soluciones a medida. Próximamente electrónica y mecatrónica.
+      </p>
+      <div class="hero-actions">
+        <a href="/servicios" class="btn btn-primary">Ver Servicios</a>
+        <a href="#contacto" class="btn btn-outline">Solicitar Presupuesto</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 80px; /* Offset header height */
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Minimalist industrial background: flat white or very light gray pattern could go here, but keeping it clean white */
+    background: var(--bg-color);
+    z-index: 0;
+  }
+  
+  .relative {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+  }
+  
+  .badge {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-tertiary);
+    border-radius: 4px; /* Sharp corners */
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    text-transform: uppercase;
+    display: inline-block;
+  }
+  
+  .hero-title {
+    font-size: 4rem;
+    line-height: 1.1;
+    letter-spacing: -1px;
+    
+    br {
+      display: block;
+    }
+  }
+  
+  .hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    line-height: 1.6;
+  }
+  
+  .hero-actions {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+      font-size: 1.125rem;
+    }
+    
+    .hero-actions {
+      flex-direction: column;
+      width: 100%;
+      
+      .btn {
+        width: 100%;
+      }
+    }
+  }
+</style>

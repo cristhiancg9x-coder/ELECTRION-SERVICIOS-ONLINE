@@ -1,0 +1,120 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<BaseLayout
+	title="Diagramas de Control y Presupuestos"
+	description="Diagramas unifilares y presupuestos precisos para optimizar costos y ejecución de obra."
+>
+	<Header />
+	
+	<main class="service-detail-page">
+		<article class="container">
+			<header class="service-header text-center">
+				<div class="service-icon">📊</div>
+				<h1 class="page-title"><span class="text-gradient">Diagramas</span> y Presupuestos</h1>
+				<p class="service-lead">Optimiza la ejecución de tu obra con documentación clara y presupuestos precisos.</p>
+			</header>
+
+			<div class="service-content glass-panel">
+				<div class="content-grid">
+					<div>
+						<h2>Control total de tu proyecto</h2>
+						<p>Un buen diagrama facilita la instalación, pero un presupuesto exacto garantiza que tu obra se termine sin sorpresas financieras. En <strong>Electrion</strong> combinamos ambos elementos para darte certeza.</p>
+						
+						<h3>Servicios Integrados</h3>
+						<ul>
+							<li>✓ Diagramas Unifilares (Baja y Media Tensión).</li>
+							<li>✓ Diagramas de Control y Fuerza.</li>
+							<li>✓ Cuantificación de materiales y volumetrías.</li>
+							<li>✓ Tabuladores de obra y análisis de precios unitarios.</li>
+						</ul>
+					</div>
+					<div class="image-placeholder">
+						<!-- Diagram representation -->
+						<div class="diagram-mockup">
+							<div class="circuit-path"></div>
+						</div>
+					</div>
+				</div>
+
+				<div class="service-cta text-center mt-12">
+					<h3>Optimiza tu presupuesto hoy mismo</h3>
+					<a href="/contacto?servicio=diagramas" class="btn btn-primary mt-4">Iniciar Proyecto</a>
+				</div>
+			</div>
+		</article>
+	</main>
+
+	<Footer />
+</BaseLayout>
+
+<style lang="scss">
+	/* Base styles reused from planos-electricos.astro */
+	.service-detail-page { padding-top: 120px; padding-bottom: 6rem; }
+	.service-header { margin-bottom: 4rem; }
+	.service-icon { font-size: 5rem; margin-bottom: 1rem; color: var(--primary-color); }
+	.page-title { font-size: 3.5rem; margin-bottom: 1.5rem; }
+	.service-lead { font-size: 1.25rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto; }
+	
+	.service-content {
+		padding: 4rem;
+		h2 { font-size: 2rem; color: var(--primary-color); margin-bottom: 1.5rem; }
+		h3 { font-size: 1.5rem; margin-top: 2.5rem; margin-bottom: 1rem; }
+		p { margin-bottom: 1.5rem; font-size: 1.1rem; color: var(--text-secondary); }
+		ul { list-style: none; li { margin-bottom: 1rem; font-size: 1.1rem; color: var(--text-primary); padding-left: 1.5rem; } }
+	}
+
+	.content-grid {
+		display: grid;
+		grid-template-columns: 1.5fr 1fr;
+		gap: 4rem;
+		align-items: center;
+	}
+
+	.diagram-mockup {
+		width: 100%;
+		height: 350px;
+		background: var(--bg-tertiary); 
+		border-radius: 8px;
+		position: relative;
+		overflow: hidden;
+		border: 1px solid var(--border-color);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.circuit-path {
+		width: 60%;
+		height: 60%;
+		border: 4px solid var(--primary-color);
+		border-radius: 4px;
+		position: relative;
+		
+		&::after {
+			content: '';
+			position: absolute;
+			top: -10px;
+			left: 20%;
+			width: 20px;
+			height: 20px;
+			background: var(--bg-color);
+			border: 4px solid var(--secondary-color);
+			border-radius: 50%;
+		}
+	}
+
+	.service-cta { border-top: 1px solid var(--border-color); padding-top: 3rem; margin-top: 4rem; h3 { font-size: 1.75rem; } }
+	.text-center { text-align: center; }
+	.mt-4 { margin-top: 1rem; }
+	.mt-12 { margin-top: 3rem; }
+
+	@media (max-width: 900px) {
+		.content-grid { grid-template-columns: 1fr; }
+		.service-content { padding: 2.5rem 1.5rem; }
+		.page-title { font-size: 2.5rem; }
+	}
+</style>

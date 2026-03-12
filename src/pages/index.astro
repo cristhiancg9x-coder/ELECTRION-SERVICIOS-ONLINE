@@ -1,0 +1,180 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Hero from '../components/Hero.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+
+// Placeholder data for services on homepage
+const services = [
+	{
+		title: "Planos Eléctricos",
+		description: "Diseño y cálculo de planos eléctricos residenciales, comerciales e industriales bajo normativa.",
+		icon: "📋",
+		href: "/servicios/planos-electricos"
+	},
+	{
+		title: "Diagramas y Presupuestos",
+		description: "Diagramas unifilares y tabuladores precisos para optimizar costos y ejecución de obra.",
+		icon: "📊",
+		href: "/servicios/diagramas-y-presupuestos"
+	},
+	{
+		title: "Asesoría Técnica",
+		description: "Consultoría especializada para resolver problemas complejos y mejorar la eficiencia energética.",
+		icon: "💡",
+		href: "/servicios/asesoria"
+	}
+];
+---
+
+<BaseLayout
+	title="Especialistas en Proyectos Eléctricos"
+	description="Electrion Servicios Online ofrece diseño de planos, diagramas de control, presupuestos y soluciones a medida. Próximamente electrónica y mecatrónica."
+>
+	<Header />
+	
+	<main>
+		<Hero />
+		
+		<section id="servicios-destacados" class="services-section">
+			<div class="container">
+				<div class="section-header text-center">
+					<h2 class="section-title">Nuestros <span class="text-gradient">Servicios</span></h2>
+					<p class="section-subtitle">Soluciones integrales para garantizar la seguridad y eficiencia de tu proyecto eléctrico.</p>
+				</div>
+				
+				<div class="services-grid">
+					{services.map(service => (
+						<ServiceCard 
+							title={service.title}
+							description={service.description}
+							icon={service.icon}
+							href={service.href}
+						/>
+					))}
+				</div>
+				
+				<div class="text-center mt-12">
+					<a href="/servicios" class="btn btn-outline" style="margin-top: 3rem;">Ver Todos los Servicios</a>
+				</div>
+			</div>
+		</section>
+
+		<section class="trust-section relative">
+			<div class="container relative">
+				<div class="trust-content glass-panel">
+					<h2>¿Por qué elegir <span class="text-gradient">Electrion</span>?</h2>
+					<div class="trust-grid">
+						<div class="trust-item">
+							<div class="trust-icon">🏆</div>
+							<h3>Calidad Profesional</h3>
+							<p>Nuestros diseños cumplen con los más altos estándares y normativas vigentes.</p>
+						</div>
+						<div class="trust-item">
+							<div class="trust-icon">⏱️</div>
+							<h3>Entregas Puntuales</h3>
+							<p>Respetamos los tiempos acordados para que tu proyecto no se detenga.</p>
+						</div>
+						<div class="trust-item">
+							<div class="trust-icon">🔋</div>
+							<h3>Innovación Constante</h3>
+							<p>Integrando las últimas tecnologías en control eléctrico y próximamente mecatrónica.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<Footer />
+</BaseLayout>
+
+<style lang="scss">
+	.services-section {
+		background-color: var(--bg-color);
+		position: relative;
+		z-index: 10;
+	}
+
+	.section-header {
+		margin-bottom: 4rem;
+		max-width: 600px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.section-title {
+		font-size: 2.5rem;
+	}
+
+	.section-subtitle {
+		color: var(--text-secondary);
+		font-size: 1.125rem;
+	}
+
+	.services-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2rem;
+	}
+	
+	.text-center {
+		text-align: center;
+	}
+	
+	.mt-12 {
+		margin-top: 3rem;
+	}
+
+	.trust-section {
+		padding-top: 2rem;
+		padding-bottom: 8rem;
+		
+		/* Removed radial gradient background for cleaner flat look */
+	}
+	
+	.trust-content {
+		padding: 4rem;
+		text-align: center;
+		
+		h2 {
+			font-size: 2.5rem;
+			margin-bottom: 3rem;
+		}
+	}
+	
+	.trust-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 3rem;
+		text-align: left;
+	}
+	
+	.trust-item {
+		.trust-icon {
+			font-size: 2.5rem;
+			margin-bottom: 1rem;
+		}
+		
+		h3 {
+			font-size: 1.25rem;
+			color: var(--text-primary);
+		}
+		
+		p {
+			color: var(--text-secondary);
+			line-height: 1.5;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.trust-content {
+			padding: 2rem;
+		}
+		
+		.trust-grid {
+			text-align: center;
+		}
+	}
+</style>

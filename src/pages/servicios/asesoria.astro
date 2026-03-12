@@ -1,0 +1,123 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<BaseLayout
+	title="Asesoría Técnica y Consultoría Eléctrica"
+	description="Asesoría experta para resolver problemas complejos, optimización energética y revisión de proyectos eléctricos."
+>
+	<Header />
+	
+	<main class="service-detail-page">
+		<article class="container">
+			<header class="service-header text-center">
+				<div class="service-icon">💡</div>
+				<h1 class="page-title"><span class="text-gradient">Asesoría</span> Técnica</h1>
+				<p class="service-lead">Tu aliado estratégico para resolver retos eléctricos de alta complejidad.</p>
+			</header>
+
+			<div class="service-content glass-panel">
+				<div class="content-grid">
+					<div>
+						<h2>Expertise al servicio de tu empresa</h2>
+						<p>No todos los problemas eléctricos tienen soluciones obvias. Entender la causa raíz de anomalías en la red, o encontrar oportunidades de ahorro energético, requiere una inspección rigurosa y conocimiento avanzado.</p>
+						
+						<h3>Nuestra Consultoría Cubre:</h3>
+						<ul>
+							<li>✓ Análisis de calidad de la energía y factor de potencia.</li>
+							<li>✓ Corrección de anomalías en tableros y subestaciones.</li>
+							<li>✓ Optimización de consumo y eficiencia energética.</li>
+							<li>✓ Auditarías a instalaciones existentes (Peritaje).</li>
+						</ul>
+					</div>
+					<div class="image-placeholder">
+						<!-- Consulting Representation -->
+						<div class="consulting-mockup">
+							<div class="data-chart">
+								<div class="bar bar-1"></div>
+								<div class="bar bar-2"></div>
+								<div class="bar bar-3"></div>
+								<div class="bar bar-4"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="service-cta text-center mt-12">
+					<h3>Agenda una sesión diagnóstico</h3>
+					<a href="/contacto?servicio=asesoria" class="btn btn-primary mt-4">Contactar a un Experto</a>
+				</div>
+			</div>
+		</article>
+	</main>
+
+	<Footer />
+</BaseLayout>
+
+<style lang="scss">
+	/* Base styles reused */
+	.service-detail-page { padding-top: 120px; padding-bottom: 6rem; }
+	.service-header { margin-bottom: 4rem; }
+	.service-icon { font-size: 5rem; margin-bottom: 1rem; color: var(--primary-color); }
+	.page-title { font-size: 3.5rem; margin-bottom: 1.5rem; }
+	.service-lead { font-size: 1.25rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto; }
+	
+	.service-content {
+		padding: 4rem;
+		h2 { font-size: 2rem; color: var(--primary-color); margin-bottom: 1.5rem; }
+		h3 { font-size: 1.5rem; margin-top: 2.5rem; margin-bottom: 1rem; }
+		p { margin-bottom: 1.5rem; font-size: 1.1rem; color: var(--text-secondary); }
+		ul { list-style: none; li { margin-bottom: 1rem; font-size: 1.1rem; color: var(--text-primary); padding-left: 1.5rem; } }
+	}
+
+	.content-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 4rem; align-items: center; }
+
+	.consulting-mockup {
+		width: 100%;
+		height: 350px;
+		background: var(--bg-tertiary); 
+		border-radius: 8px;
+		border: 1px solid var(--border-color);
+		display: flex;
+		align-items: flex-end;
+		justify-content: center;
+		padding: 2rem;
+	}
+
+	.data-chart {
+		display: flex;
+		gap: 15px;
+		align-items: flex-end;
+		height: 200px;
+		width: 100%;
+		
+		.bar {
+			flex: 1;
+			background: var(--primary-color);
+			border-radius: 2px 2px 0 0;
+		}
+		
+		.bar-1 { height: 40%; animation: grow 2s ease-out forwards; }
+		.bar-2 { height: 70%; animation: grow 2.2s ease-out forwards; }
+		.bar-3 { height: 50%; animation: grow 2.4s ease-out forwards; }
+		.bar-4 { height: 90%; background: var(--secondary-color); animation: grow 2.6s ease-out forwards; }
+	}
+
+	@keyframes grow {
+		0% { transform: scaleY(0); transform-origin: bottom; }
+		100% { transform: scaleY(1); transform-origin: bottom; }
+	}
+
+	.service-cta { border-top: 1px solid var(--border-color); padding-top: 3rem; margin-top: 4rem; h3 { font-size: 1.75rem; } }
+	.text-center { text-align: center; }
+	.mt-4 { margin-top: 1rem; }
+	.mt-12 { margin-top: 3rem; }
+
+	@media (max-width: 900px) {
+		.content-grid { grid-template-columns: 1fr; }
+		.service-content { padding: 2.5rem 1.5rem; }
+		.page-title { font-size: 2.5rem; }
+	}
+</style>
